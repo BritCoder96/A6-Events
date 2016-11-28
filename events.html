@@ -1,0 +1,68 @@
+<html>
+	<body style="background-color: grey">
+		<h1>Playing With Boxes!</h1>
+		<div id=box style="width:350px; height:350px; background-color:blue;  display: inline-block; vertical-align: middle;">
+			<h2>Click Me!</h2>
+		</div>
+		<div id=boxthesecond style="width:350px; height:350px; background-color:red; display: none;">
+		  <h2>Hidden Box! Click for more box stuff!</h2>
+		</div>
+		<div id=boxthethird style="width:350px; height:350px; background-color:purple ; display: none;">
+		  <h2>Hidden Box #2! Click for more box stuff!</h2>
+		</div>
+
+	</body>
+	<script type="text/javascript">
+		var el = document.getElementById('box');
+		var el2;
+		var audio = new Audio('Victory.wav');
+		el.addEventListener('click', function(e){
+		    el.innerHTML="<h2>Successfuly Clicked! Now try Pressing h or H to hide the box!</h2>";
+		    el.style.backgroundColor="red";
+		    el.style.fontSize="xx-large";
+		    el.id = "box2"
+		});
+		var el3 = document.getElementById('boxthesecond')
+	    var el4;
+	    el3.onclick = function(e){
+		   el3.innerText="Now try pressing down s or S to show the first box again!";
+		   el3.style.backgroundColor="orange";
+		   el3.style.fontSize="xx-large";
+		   el3.id = "box4"
+		   el4 = document.getElementById('box4')
+		};
+		var el5 = document.getElementById('boxthethird');
+	    document.addEventListener('keypress', function(oPEvt) {
+	    	var el2 = document.getElementById('box2')
+	    	var oEvent = oPEvt || window.event, nChr = oEvent.charCode
+	    	if (nChr === 104) {
+	    		el2.id = "box3"
+	    		el2.style.display = "none";
+	    		el3.style.display = "inline-block"
+	    	}
+	    	console.log(nChr);
+	    	if (nChr === 115) {
+	    		el.style.display = "inline-block";
+	    		el5.style.display = "inline-block";
+	    		el5.innerHTML= "<h2>DoubleClick this element for some music!</h2>"
+	    	    el4.innerHTML= "<h2>DoubleClick the purple element for some music!</h2>"
+	    	    el.innerHTML= "<h2>DoubleClick the purple element for some music!</h2>"
+
+	    	}
+	    });
+		el5.ondblclick = playMusic;
+
+		function playMusic () {	   
+			audio.play();
+	    }
+	    audio.addEventListener('ended', function(e) {
+	    	el5.innerHTML="<h2>Victory!</h2>";
+			el4.innerHTML="<h2>Funky!</h2>";
+			el5.style.backgroundColor="green";
+			el4.style.backgroundColor="green";
+			el.innerHTML="<h2>Cool!</h2>";
+			el.style.backgroundColor="green";
+		});
+
+	</script>
+</html>
