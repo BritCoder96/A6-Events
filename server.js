@@ -24,7 +24,7 @@ var server = http.createServer (function (req, res) {
     case '/js/scripts.js':
       sendFile(res, 'public/js/scripts.js', 'text/javascript', 200)
       break
-    case '/Victory.wav'
+    case '/Victory.wav':
       sendFile(res, 'public/music/Victory.wav', 'audio/wav', 200)
       break
     default:
