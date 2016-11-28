@@ -18,7 +18,7 @@ var server = http.createServer (function (req, res) {
     case '/css/style.css':
       sendFile(res, 'public/css/style.css', 'text/css', 200)
       break
-    case '/README.MD':
+    case '/README.md':
       sendFile(res, 'README.md', 'text/markdown', 200)
       break
     case '/js/scripts.js':
