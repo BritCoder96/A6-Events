@@ -2,7 +2,7 @@
 	<body style="background-color: grey">
 		<h1>Playing With Boxes!</h1>
 		<div id=box style="width:350px; height:350px; background-color:blue;  display: inline-block; vertical-align: middle;">
-			<h2>Click Me!</h2>
+			<h2>Mouseover Me!</h2>
 		</div>
 		<div id=boxthesecond style="width:350px; height:350px; background-color:red; display: none;">
 		  <h2>Hidden Box! Click for more box stuff!</h2>
@@ -16,8 +16,8 @@
 		var el = document.getElementById('box');
 		var el2;
 		var audio = new Audio('Victory.wav');
-		el.addEventListener('click', function(e){
-		    el.innerHTML="<h2>Successfuly Clicked! Now try Pressing h or H to hide the box!</h2>";
+		el.addEventListener('mouseover', function(e){
+		    el.innerHTML="<h2>Successfuly Moused Over! Now try Pressing h or H to hide the box!</h2>";
 		    el.style.backgroundColor="red";
 		    el.style.fontSize="xx-large";
 		    el.id = "box2"
